@@ -9,8 +9,8 @@ from thrift.transport import TTransport
 
 from message.api import MessageService
 
-sender = 'imoocd@163.com'
-authCode = 'aA111111'
+sender = 'baiyifan@163.com'
+authCode = 'Byf312358196'
 class MessageServiceHandler:
 
     def sendMobileMessage(self, mobile, message):
@@ -22,7 +22,7 @@ class MessageServiceHandler:
         messageObj = MIMEText(message, "plain", "utf-8")
         messageObj['From'] = sender
         messageObj['To'] = email
-        messageObj['Subject'] = Header('慕课网邮件', 'utf-8')
+        messageObj['Subject'] = Header('BYF邮件', 'utf-8')
         try:
             smtpObj = smtplib.SMTP('smtp.163.com')
             smtpObj.login(sender, authCode)
@@ -37,7 +37,7 @@ class MessageServiceHandler:
 if __name__ == '__main__':
     handler = MessageServiceHandler()
     processor = MessageService.Processor(handler)
-    transport = TSocket.TServerSocket(None, "9090")
+    transport = TSocket.TServerSocket("127.0.0.1", "9090")
     tfactory = TTransport.TFramedTransportFactory()
     pfactory = TBinaryProtocol.TBinaryProtocolFactory()
 
