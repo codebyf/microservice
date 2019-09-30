@@ -64,7 +64,7 @@ public abstract class LoginFilter implements Filter {
         }
 
         if(userDTO==null) {
-            response.sendRedirect("http://www.microservice.com/user/login");
+            response.sendRedirect("http://192.168.1.101/user/login");
             return;
         }
 

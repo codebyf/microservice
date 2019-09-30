@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
-mvn clean package
-
-docker build -t user-service:latest .
+docker rmi 192.168.1.101/micro-service/user-service:latest
+docker build -t 192.168.1.101/micro-service/user-service:latest .
+docker push 192.168.1.101/micro-service/user-service:latest

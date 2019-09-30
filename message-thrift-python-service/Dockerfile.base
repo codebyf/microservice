@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM 192.168.1.101/micro-service/python:3.6
 MAINTAINER BYF baiyifan@163.com
 
 RUN pip install thrift
